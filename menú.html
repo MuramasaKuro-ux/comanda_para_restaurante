@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/hoja de estilos/style.css" />
+  <title>Menú Restaurante</title>
+</head>
+<body>
+
+<div id="overlay" class="overlay">
+  <div id="comanda-panel" class="comanda-panel">
+    <h2>🧾 Tu Comanda</h2>
+    <div id="comanda-lista"></div>
+    <div id="comanda-total" class="comanda-total"></div>
+    <div class="botones-comanda">
+      <button onclick="confirmarComanda()">Confirmar</button>
+      <button onclick="cerrarComanda()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<header class="header_inicio">
+  <img class="img_inicio" src="/imagenes/logo1.png" alt="Logo" />
+  <nav class="nav_inicio2">
+    <a href="inicio.html">Inicio</a>
+    <a href="mesas.html">Mesas</a>
+    <a href="menú.html">Menú</a>
+  </nav>
+</header>
+
+<div class="menu-hamburguesa" onclick="abrirMenu()">☰</div>
+
+<div id="menuLateral" class="menu-lateral">
+  <a href="#Contactanos">Contacto</a>
+  <a href="#" onclick="cerrarSesion()">Cerrar sesión</a>
+</div>
+
+<header class="menu-header">
+  <div class="menu-title">
+    <h1>Menú</h1>
+  </div>
+  <div class="order-icon" onclick="abrirComanda()">
+    <img src="/imagenes/ordenar-comida.png" alt="Ver comanda" style="height: 60px; width: 60px; cursor: pointer;">
+  </div>
+</header>
+
+<nav class="menu-tabs">
+  <button onclick="showSection('entradas')">Entradas</button>
+  <button onclick="showSection('platillos')">Platillos</button>
+  <button onclick="showSection('bebidas')">Bebidas</button>
+  <button onclick="showSection('postres')">Postres</button>
+</nav>
+
+<div class="buscador-container">
+  <input type="text" id="buscador" placeholder="Buscar..." onkeyup="buscarAlimentos()" />
+</div>
+
+<!-- ENTRADAS -->
+<div id="entradas" class="menu-section">
+  <div class="food-card">
+    <div class="tooltip">
+      <img src="imagenes/guacamole.jpeg" alt="Guacamole con totopos" />
+      <span class="tooltip-text">
+        Totopos crujientes con guacamole fresco hecho con aguacate, cebolla y limón.
+      </span>
+    </div>
+    <p>$100.00</p>
+    <p>Guacamole con totopos</p>
+    <div style="display:flex; align-items:center; gap:8px; margin-top: 8px;">
+      <button onclick="cambiarCantidad(this, -1)">-</button>
+      <input type="number" min="1" value="1" style="width:40px; text-align:center;" readonly />
+      <button onclick="cambiarCantidad(this, 1)">+</button>
+      <button onclick="agregarAComandaConCantidad('Guacamole con totopos', 100, this)">Agregar</button>
+    </div>
+  </div>
+</div>
+
+<!-- PLATILLOS -->
+<div id="platillos" class="menu-section" style="display:none">
+  <div class="food-card">
+    <div class="tooltip">
+      <img src="imagenes/tacos.jpeg" alt="Tacos al pastor" />
+      <span class="tooltip-text">Tacos con carne al pastor, piña, cebolla y cilantro.</span>
+    </div>
+    <p>$85.00</p>
+    <p>Tacos al pastor</p>
+    <div style="display:flex; align-items:center; gap:8px; margin-top: 8px;">
+      <button onclick="cambiarCantidad(this, -1)">-</button>
+      <input type="number" min="1" value="1" style="width:40px; text-align:center;" readonly />
+      <button onclick="cambiarCantidad(this, 1)">+</button>
+      <button onclick="agregarAComandaConCantidad('Tacos al pastor', 85, this)">Agregar</button>
+    </div>
+  </div>
+</div>
+
+<!-- BEBIDAS -->
+<div id="bebidas" class="menu-section" style="display:none">
+  <div class="food-card">
+    <div class="tooltip">
+      <img src="imagenes/jamaica.jpeg" alt="Agua de jamaica" />
+      <span class="tooltip-text">Agua de jamaica fresca, ligeramente endulzada.</span>
+    </div>
+    <p>$30.00</p>
+    <p>Agua de jamaica</p>
+    <div style="display:flex; align-items:center; gap:8px; margin-top: 8px;">
+      <button onclick="cambiarCantidad(this, -1)">-</button>
+      <input type="number" min="1" value="1" style="width:40px; text-align:center;" readonly />
+      <button onclick="cambiarCantidad(this, 1)">+</button>
+      <button onclick="agregarAComandaConCantidad('Agua de jamaica', 30, this)">Agregar</button>
+    </div>
+  </div>
+</div>
+
+<!-- POSTRES -->
+<div id="postres" class="menu-section" style="display:none">
+  <div class="food-card">
+    <div class="tooltip">
+      <img src="imagenes/flan.jpeg" alt="Flan napolitano" />
+      <span class="tooltip-text">Postre tradicional con caramelo suave y textura cremosa.</span>
+    </div>
+    <p>$50.00</p>
+    <p>Flan napolitano</p>
+    <div style="display:flex; align-items:center; gap:8px; margin-top: 8px;">
+      <button onclick="cambiarCantidad(this, -1)">-</button>
+      <input type="number" min="1" value="1" style="width:40px; text-align:center;" readonly />
+      <button onclick="cambiarCantidad(this, 1)">+</button>
+      <button onclick="agregarAComandaConCantidad('Flan napolitano', 50, this)">Agregar</button>
+    </div>
+  </div>
+</div>
+
+<footer id="Contactanos" class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Order tap. Todos los derechos reservados.</p>
+    <div class="redes-sociales">
+      <a href="https://www.instagram.com/danilotaro/" target="_blank">Instagram</a>
+      <a href="mailto:2024030427@upsin.edu.mx">Correo</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/scripts/java.js"></script>
+</body>
+</html>

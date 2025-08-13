@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hoja de estilos/style.css">
+    <title>Mesas</title>
+</head>
+<body class="body_mesas">
+    <header class="header_inicio">
+
+        <img class="img_inicio" src="/imagenes/logo1.png">
+
+        <nav class="nav_inicio2">
+            <a href="inicio.html">Inicio</a>
+            <a href="mesas.html">Mesas</a>
+            <a href="menú.html">Menú</a>
+        </nav>
+        
+    </header>
+
+    <div class="menu-hamburguesa" onclick="abrirMenu()">☰</div>
+
+    <div id="menuLateral" class="menu-lateral">
+        <a href="#" onclick="cerrarSesion()">Cerrar sesión</a>
+    </div>
+
+    <header class="header_mesas">
+        <button class="boton activo" onclick="mostrarSeccion('a', this)">Sección A</button>
+        <button class="boton" onclick="mostrarSeccion('b', this)">Sección B</button>
+        <button class="boton" onclick="mostrarSeccion('c', this)">Sección C</button>
+    </header>
+
+    <section class="mesas-section">
+
+        <section class="mesas-2">
+
+            <section id="seccion-a" class="seccion activa">
+                <button class="mesas" onclick="elegirMesa(1)">Mesa 1</button>
+                <button class="mesas" onclick="elegirMesa(2)">Mesa 2</button>
+                <button class="mesas" onclick="elegirMesa(3)">Mesa 3</button>
+                <button class="mesas" onclick="elegirMesa(4)">Mesa 4</button>
+                <button class="mesas" onclick="elegirMesa(5)">Mesa 5</button>
+                <button class="mesas" onclick="elegirMesa(6)">Mesa 6</button>
+            </section>
+
+            <section id="seccion-b" class="seccion">
+                <button class="mesas" onclick="elegirMesa(7)">Mesa 7</button>
+                <button class="mesas" onclick="elegirMesa(8)">Mesa 8</button>
+                <button class="mesas" onclick="elegirMesa(9)">Mesa 9</button>
+                <button class="mesas" onclick="elegirMesa(10)">Mesa 10</button>
+                <button class="mesas" onclick="elegirMesa(11)">Mesa 11</button>
+                <button class="mesas" onclick="elegirMesa(12)">Mesa12</button>
+            </section>
+
+            <section id="seccion-c" class="seccion">
+                <button class="mesas" onclick="elegirMesa(13)">Mesa 13</button>
+                <button class="mesas" onclick="elegirMesa(14)">Mesa 14</button>
+                <button class="mesas" onclick="elegirMesa(15)">Mesa 15</button>
+                <button class="mesas" onclick="elegirMesa(16)">Mesa 16</button>
+                <button class="mesas" onclick="elegirMesa(17)">Mesa 17</button>
+                <button class="mesas" onclick="elegirMesa(18)">Mesa 18</button>
+            </section>
+
+        </section>
+
+        <section class="seccion-comanda">
+            <div class="header-comanda">Selecciona una mesa</div>
+        </section>
+
+
+    </section>
+
+    <footer id="Contactanos" class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Order tap. Todos los derechos reservados.</p>
+            <div class="redes-sociales">
+            <a href="https://www.instagram.com/danilotaro/" target="_blank">Instagram</a>
+            <a href="mailto:2024030427@upsin.edu.mx">Correo</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/scripts/java.js"></script>
+</body>
+</html>

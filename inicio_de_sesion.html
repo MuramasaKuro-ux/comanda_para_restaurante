@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="hoja de estilos/style.css">
+  <title>Login</title>
+</head>
+<body class="body_login">
+  <form action="/login" class="login" method="POST">
+    <h2>Iniciar sesión</h2>
+    <img src="imagenes/logo1.png" width="100">
+    <input type="text" class="user" name="usuario" placeholder="Usuario" required>
+    <input type="password" class="password" name="password" placeholder="Contraseña" required>
+    <button type="submit" class="enter">Entrar</button>
+    <div class="opciones">
+      <div class="recordar">
+        <input type="checkbox" id="recordar" name="recordar">
+        <label for="recordar">Recordar usuario</label>
+      </div>
+      <div class="registrarse">
+        <label>¿No tienes cuenta? <a href="registro.html">Regístrate</a></label>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
